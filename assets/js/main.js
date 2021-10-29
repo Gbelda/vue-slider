@@ -31,12 +31,21 @@ const app = new Vue({
         ]
 
     },
-    method: {
-        cycleImg() {
+    methods: {
+        cycleDown: function () {
+            this.counter < 4 ? this.counter++ : this.counter = 0
+        },
+
+        cycleUp: function () {
+            this.counter > 0 ? this.counter-- : this.counter = 4
+        },
+
+        autoCycle: function () {
             setInterval(() => {
-                return this.counter < 4 ? this.counter++ : this.counter = 0
+                this.counter < 4 ? this.counter++ : this.counter = 0
             }, 3000);
         }
+
 
     }
 

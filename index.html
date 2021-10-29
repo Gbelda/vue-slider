@@ -15,7 +15,7 @@
 
         <main>
             <div id="root" class="container">
-                <button @click='cycleImg()'class="autoplay">AUTOPLAY</button>
+                <button @click='autoCycle'class="autoplay">AUTOPLAY</button>
                 <div class="hero">
                     <img id="hero_img" :src="countries[counter].countryImg"
                         alt="">
@@ -42,11 +42,11 @@
                 </div>
                 <!-- SIDE IMAGES -->
 
-                <button @click='(counter>0) ? counter-- : counter= 4'
+                <button @click='cycleUp'
                     id="select_up" class="selector"><i
                         class="fas
                         fa-chevron-up"></i></button>
-                <button @click='(counter<4) ? counter++ : counter= 0'
+                <button @click='cycleDown'
                     id="select_down"
                     class="selector"><i
                         class="fas
