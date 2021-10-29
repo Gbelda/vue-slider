@@ -1,6 +1,7 @@
 const app = new Vue({
     el: '#root',
     data: {
+        isAutoCycle: false,
         counter: 0,
         countries: [
             {
@@ -41,14 +42,19 @@ const app = new Vue({
         },
 
         autoCycle: function () {
-            setInterval(() => {
-                this.counter < 4 ? this.counter++ : this.counter = 0
-            }, 3000);
+            if (this.isAutoCycle == false) {
+                this.isAutoCycle = true
+                auto = setInterval(() => {
+                    this.counter < 4 ? this.counter++ : this.counter = 0
+                }, 3000);
+            } else {
+                this.isAutoCycle = false
+                clearInterval(auto)
+            }
+
         }
 
-
     }
-
 
 })
 
