@@ -31,6 +31,17 @@ const app = new Vue({
         ]
 
     },
+    method: {
+        cycleImg() {
+            setInterval(() => {
+                return this.counter < 4 ? this.counter++ : this.counter = 0
+            }, 3000);
+        }
+
+    }
 
 
 })
+
+
+
