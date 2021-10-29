@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Array - Carousel</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+    <body>
+
+        <main>
+            <div id="root" class="container">
+                <div class="hero">
+                    <img id="hero_img" :src="countries[counter].countryImg"
+                        alt="">
+                    <div class="description">
+                        <h1 class="title">
+                            {{countries[counter].country}}
+                        </h1>
+                        <p class="text">
+                            {{countries[counter].countryDescription}}
+                        </p>
+                    </div>
+                </div>
+                <!-- HERO IMAGE -->
+
+                <div class="options">
+                    <ul class="places">
+                        <li v-for="country in countries">
+                            <img :src="country.countryImg" alt="">
+                        </li>
+                    </ul>
+                </div>
+                <!-- SIDE IMAGES -->
+
+                <button @click='(counter>0) ? counter-- : counter= 4'
+                    id="select_up" class="selector"><i
+                        class="fas
+                        fa-chevron-up"></i></button>
+                <button @click='(counter<4) ? counter++ : counter= 0'
+                    id="select_down"
+                    class="selector"><i
+                        class="fas
+                        fa-chevron-down"></i></button>
+
+                <!-- CAROUSEL BUTTONS -->
+            </div>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
