@@ -31,8 +31,11 @@
 
                 <div class="options">
                     <ul class="places">
-                        <li v-for="country in countries">
-                            <img :src="country.countryImg" alt="">
+                        <li v-for="(country, index) in countries"
+                            :key="country.country"
+                            :class="{selected: index==counter}">
+                            <img :src="country.countryImg"
+                                alt="">
                         </li>
                     </ul>
                 </div>
